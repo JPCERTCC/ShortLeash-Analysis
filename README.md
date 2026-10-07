@@ -58,6 +58,6 @@ Example:
 
 ### Source Code
 
-The C++ source code for the IDA plugin is available in the repository's [`src`](../src) directory.
+The C++ source code for the IDA plugin is available in the repository's `src` directory.
 
 The source code can be used to review the extraction logic or build the plugin for other IDA environments.
