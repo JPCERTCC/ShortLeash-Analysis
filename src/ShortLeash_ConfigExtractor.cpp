@@ -1041,7 +1041,7 @@ ea_t get_second_operand_target_ea(ea_t ea)
     return get_operand_target_ea(ea, 1);
 }
 
-static void ShortLeash_ConfigExtracter(void) {
+static void ShortLeash_ConfigExtractor(void) {
     msg("[+] Start ShortLeash config extractor\n");
 
     std::string func_pattern;
@@ -1144,7 +1144,7 @@ int pluginMainFunc(void)
     // errors should already return false, but an unexpected C++ exception must
     // not terminate IDA.
     try {
-        ShortLeash_ConfigExtracter();
+        ShortLeash_ConfigExtractor();
     }
     catch (const std::exception& e) {
         msg("[-] ShortLeash config extractor exception: %s\n", e.what());
@@ -1158,25 +1158,25 @@ int pluginMainFunc(void)
 
 
 // Define the class that inherits from plugmod_t
-class ShortLeash_ConfigExtracter_Plugin : public plugmod_t 
+class ShortLeash_ConfigExtractor_Plugin : public plugmod_t 
 {
 public:
     // Constructor
-    ShortLeash_ConfigExtracter_Plugin() 
+    ShortLeash_ConfigExtractor_Plugin() 
     {
-        msg("[+] ShortLeash_ConfigExtracter: Constructor called.\n");
+        msg("[+] ShortLeash_ConfigExtractor: Constructor called.\n");
     }
 
     // Destructor
-    virtual ~ShortLeash_ConfigExtracter_Plugin() 
+    virtual ~ShortLeash_ConfigExtractor_Plugin() 
     {
-        msg("[+] ShortLeash_ConfigExtracter: Destructor called.\n");
+        msg("[+] ShortLeash_ConfigExtractor: Destructor called.\n");
     }
 
     // Method that gets called when the plugin is activated
     virtual bool idaapi run(size_t arg) override
     {
-        msg("[+] ShortLeash_ConfigExtracter.run() called with arg: %d\n", arg);
+        msg("[+] ShortLeash_ConfigExtractor.run() called with arg: %d\n", arg);
 
         pluginMainFunc();
 
@@ -1187,7 +1187,7 @@ public:
 
 static plugmod_t* idaapi init(void)
 {
-    return new ShortLeash_ConfigExtracter_Plugin();
+    return new ShortLeash_ConfigExtractor_Plugin();
 }
 
 
@@ -1203,6 +1203,6 @@ plugin_t PLUGIN =
     nullptr,              // invoke the pluginida
     nullptr,              // long comment about the plugin
     nullptr,              // multiline help about the plugin
-    "ShortLeash_ConfigExtracter_Plugin",	  // the preferred short name of the plugin
+    "ShortLeash_ConfigExtractor_Plugin",	  // the preferred short name of the plugin
     ""			  // the preferred hotkey to run the plugin
 };
