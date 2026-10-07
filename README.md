@@ -1,6 +1,4 @@
-# ShortLeash-Analysis
-
-## ShortLeash ConfigExtractor - IDA Plugin
+# ShortLeash ConfigExtractor - IDA Plugin
 
 ShortLeash ConfigExtractor is an IDA plugin for extracting configuration data from **ShortLeash** malware samples.
 
